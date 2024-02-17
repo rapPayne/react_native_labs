@@ -11,7 +11,7 @@ import { Platform } from 'react-native';
 //A tethered device will need to use your laptop's IP address
 
 //To find your actual IP address, run the `ipconfig` command on Windows or the
-// `ifconfig` command on a Mac or Linux.
+// `ifconfig | grep "inet "` command on a Mac or Linux.
 
 /// Returns the best URL string based on the running platform. 
 /// The different platforms block different URLs. This function 
@@ -21,7 +21,7 @@ import { Platform } from 'react-native';
 /// macos/Runner/DebugProfile.entitlements
 /// <key>com.apple.security.network.client</key>
 /// <true/>
-const getBaseUrl = (port = 3008) => {
+export const getBaseUrl = (port = 3008) => {
 
   // android 10.0.2.2 via AVD
   // android 10.0.3.2 via Genymotion
