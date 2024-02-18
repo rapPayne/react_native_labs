@@ -132,3 +132,22 @@ export const buyTickets = async (purchase) => {
     throw err; // Re-throw to allow handling by caller
   }
 }
+
+/**
+ * Returns an array of promises. Each promise has the details for 
+ * each ticketId.
+ * @param {Array<number>} ticketIds 
+ */
+export const fetchTicketDetails = ticketIds => {
+  const promises = [];
+  for (ticketId of ticketIds) {
+    const url = `${getBaseUrl()}/api/reservations/${ticketId}`;
+    promises.push(fetch(url)
+      .then(res => res.json())
+      .catch(err => {
+        console.error(`Problem fetching ticket details for id '${ticketId}'!`, err);
+        throw err;
+      }))
+  }
+  return Promise.all(promises)
+} 
