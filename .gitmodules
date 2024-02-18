@@ -1,3 +1,6 @@
 [submodule "daam-server"]
 	path = daam-server
 	url = http://github.com/rapPayne/daam-server
+[submodule "server"]
+	path = server
+	url = https://github.com/rapPayne/daam-server.git
