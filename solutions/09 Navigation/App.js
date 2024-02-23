@@ -22,7 +22,7 @@ export default () => {
 
     <NavigationContainer>
       <Nav.Navigator initialRouteName="landing">
-        <Nav.Screen name="landing" options={{ title: "Pick a movie" }}>
+        <Nav.Screen name="landing" options={{ headerShown: false }}>
           {() => <Landing selectedDate={selectedDate} />}
         </Nav.Screen>
         <Nav.Screen name="filmDetails" options={{ title: "Film Details" }}>
