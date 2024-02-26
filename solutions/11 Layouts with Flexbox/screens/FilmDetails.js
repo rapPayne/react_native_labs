@@ -8,8 +8,10 @@ export function FilmDetails({ selectedDate }) {
   return (
     <>
       <ScrollView>
-        <Image source={{ uri: `${getBaseUrl()}/${film.poster_path}` }}
-          style={{ height: 350, width: 350, resizeMode: "contain" }} />
+        <View>
+          <Image source={{ uri: `${getBaseUrl()}/${film.poster_path}` }}
+            style={{ height: 350, width: 350, resizeMode: "contain" }} />
+        </View>
         <ShowingTimes film={film} selectedDate={selectedDate} />
         <Text>{film.title}</Text>
         <Text>{film.tagline}</Text>
@@ -38,6 +40,9 @@ export function FilmDetails({ selectedDate }) {
 }
 
 const styles = StyleSheet.create({
+  posterView: {
+    justifyContent: 'center',
+  },
   sideBySide: {
     flexDirection: 'row',
   },
