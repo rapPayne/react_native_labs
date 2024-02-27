@@ -1,4 +1,8 @@
 daam/
+to-copy/
+
+# Mac-specific
+.DS_Store
 
 # Logs
 logs
